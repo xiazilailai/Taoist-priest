@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>chart</title>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/socket.io.js"></script>
+    <style>
+        body{
+            padding: 20px;
+        }
+        .msgCont{
+            width: 400px;
+            height: 400px;
+            background-color: #515151;
+            position: relative;
+            overflow: hidden;
+        }
+        #msgBody{
+            width:400px;
+            height: auto;
+            word-wrap: break-word;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        #msgBody div{
+            color: #ffffff;
+            font-weight: 800;
+            width: 400px;
+            display: none;
+            overflow: hidden;
+            line-height: 28px;
+        }
+        #msgBody div:nth-child(even){
+            background-color: rgba(52, 181, 255, 0.47);
+        }
+        #msgBody div:nth-child(odd){
+            background-color: rgba(21, 255, 137, 0.47);
+        }
+        #msgBody div p{
+            margin: 0;
+            padding: 0 15px ;
+            font-size: 14px;
+        }
+
+        /*sendBox*/
+        .sendBox{
+            width: 400px;
+            background-color: #bababa;
+        }
+        .sendBox input , .sendBox button{
+            border: none;
+            outline: none;
+        }
+        .sendBox input{
+            display: inline-block;
+            width: 330px;
+            padding: 10px 5px;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 12px;
+        }
+        .sendBox button{
+            display: inline-block;
+            width: 60px;
+            padding: 10px 5px;
+            cursor: pointer;
+        }
+        .nickName{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 28px;
+            left: 28px;
+            width: 400px;
+            height: 435px;
+            background-color: rgb(69, 115, 131);
+        }
+        .none{            display: none;        }
+        .nickName div{
+            border: 1px solid #515151;
+            margin: 0 auto;
+        }
+        .nickName input, .nickName button{
+            border: none;
+            outline: none;
+        }
+        .nickName input{
+            display: inline-block;
+            width: 330px;
+            padding: 10px 5px;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 12px;
+        }
+        .nickName button{
+            display: inline-block;
+            width: 56px;
+            padding: 10px 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="msgCont">
+    <div id="msgBody" style="color: blue;">
+
+    </div>
+</div>
+<div class="sendBox">
+    <input type="text" id="msg" placeholder="想说点什么..."/><button onclick="sendSocket()">Send</button>
+</div>
+<div class="nickName">
+    <div><input type="text" class="nickValue" id="niceValue" autofocus="true" placeholder="your nickname here"/><button onclick="setNick()">OK</button></div>
+</div>
+
+<!--<button onclick="disc()">断开连接,没搞好</button>-->
+<script src="js/index.js"></script>
+</body>
+</html>
