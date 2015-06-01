@@ -20,18 +20,18 @@ app.use(express.logger('dev'));   //  日志
 //app.use(express.bodyParser());   //    解析body
 app.use(express.bodyParser({uploadDir:'./staticfile/cache'}));// 配置上传后文件存放的地方
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here create'));    // 使用cookie    后台必勇
-app.use(express.session());                                     // 使用session  后台必勇
+app.use(express.cookieParser('your secret here create'));    // 使用cookie    后台
+app.use(express.session());                                     // 使用session  后台
 app.use(app.router);
 
-// development only   开发者仅用
+// development only   开发者
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 io.on('connection', chart.onConnect);
-server.listen(app.get('port'),function(){
+server.listen(app.get('port'),function(){ //这样申明 socket 和 http 可以同时使用
     console.log("express已启动，端口为："+app.get('port'));
 });
 app.post("/qy",function(req,res){

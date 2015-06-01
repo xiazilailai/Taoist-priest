@@ -79,7 +79,7 @@ function hiddeNick(){
     msgNode.focus();
 }
 function disc(){
-    console.log("disconnect");
-    console.log(io);
+    //console.log("disconnect");
+    //console.log(io);
     io.disconnect();
 }
