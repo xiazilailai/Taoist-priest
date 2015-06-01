@@ -1,0 +1,36 @@
+body,input,button{
+    margin: 0;
+    padding: 0;
+}
+input{
+    margin:50px 0 0 100px ;
+    width: 300px;
+    height: 20px;
+    outline: none;
+    padding-left: 2px;
+}
+div{
+    background-color: #eeeeee;
+    width: 304px;
+    font-weight: 900;
+    font-family: "隶书";
+    padding-left: 2px;
+    line-height: 25px;
+}
+div:hover{
+    background-color: #888888;
+    cursor: pointer;
+}
+#div1{
+    background-color: #ffffff;
+    margin-left: 100px;
+    padding-left: 0px;
+}
+button{
+    border: none;
+    height: 24px;
+    width: 80px;
+    background-color: #f38630;
+    color: #ffffff;
+    font-weight: 800;
+}

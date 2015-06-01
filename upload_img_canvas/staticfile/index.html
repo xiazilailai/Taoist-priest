@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style>
+        .bg{
+            background-color: #3f3f3f;
+            margin-top: 50px;
+            padding-top: 20px;
+        }
+        .bt_bar{
+            margin-top: 10px;
+            border:1px solid #aaa;
+            line-height: 50px;
+            background-color: #747474;
+            color: #ffffff;
+        }
+        #submit,#submit_lrc{
+            margin-right: 20px;
+            padding: 0 20px;
+        }
+        .control_bar{
+            padding-top: 10px;
+        }
+        .jindu_bar{
+            width: 980px;
+            height: 5px;
+            background-color: #efefef;
+            overflow: hidden;
+        }
+        .JS_jindu{
+            width: 0;
+            height: 5px;
+            background-color: #ff9900;
+        }
+        #geci{
+            /*background-color: #efefef;*/
+            color: #ffffff;
+            font-weight: 800;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-family: "隶书";
+            overflow: hidden;
+        }
+        .upBar{
+            z-index: 99;
+        }
+        .upTool{
+            /*top: 200px;*/
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border: 1px solid #aaa;
+            margin: 20px;
+            cursor: pointer;
+        }
+        #canvas{
+            position: absolute;
+            top: 0;
+        }
+        .preView{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #aaa;
+            margin: 20px;
+        }
+        .preView img{
+            width: 300px;
+            height: 300px;
+        }
+        .preView2{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #aaa;
+            margin: 20px;
+        }
+        .preView2 img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="span40 clear">
+    <div class="relative left upTool">
+        <canvas id="canvasBG" width="500" height="500" style="display: block">
+            您的浏览器版本过低，不支持此功能！
+        </canvas>
+        <canvas id="canvas" width="300" height="300" style="display: block">
+            您的浏览器版本过低，不支持此功能！
+        </canvas>
+    </div>
+    <div class="relative left preView">
+        <img src="" id="preView" alt=""/>
+    </div>
+    <div class="relative left preView2">
+        <img src="" id="preView2" alt=""/>
+    </div>
+    <div class="span40 margincenter left upBar">
+        <div class="span40 height2 bt_bar margincenter alginright" style="padding-right: 10px">
+            <input type="file" id="file" name="file"/>
+            <input type="button" id="submit" name="submit" value="上传图片"/>
+            <input type="button" id="UPLoadImg" value="确 定"/>
+        </div>
+    </div>
+</div>
+<img id="ieImg" src="" alt=""/>
+<a href="uploadPics.html">多图上传</a>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/ajax.js"></script>
+<!--<script src="js/formDataBug.js"></script>-->
+<script src="js/index.js"></script>
+</body>
+</html>

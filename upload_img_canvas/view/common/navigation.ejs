@@ -1,0 +1,34 @@
+<!-- 导航 -->
+<div class="navbar navbar-inverse navbar-fixed-top " role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">YLBLOG</a>
+    </div>
+    <div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">            
+           <li class="active"><a href="/">网站主页</a></li>
+           <li><a href="/about.html">关于博客</a></li>
+           <li><a href="http://cms.yl-blog.com/">蘑菇建站</a></li>
+           
+           <% if(!user){ %>
+           <li><a href="/login.html">登录</a></li>
+ 		   <% }else{  %>
+           <li><a href="/">欢迎, <%= user %></a></li>
+           <li><a href="/logout">注销</a></li>
+           
+           <% }%>
+           
+      </ul>
+    </div>
+  </div>
+  
+</div>
+
+
+

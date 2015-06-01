@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <% include common/header%>
+  </head>
+  <body>
+  <% include common/navigation%>
+
+  
+<div class="banner">
+	<div class="container">
+         <div class="jumbotron">
+		    <h1>YL BLOG</h1>
+		    <p>雨林博客欢迎您</p>
+		    <% if(req.session.user_name){%>
+		    <p><a href="/publish.html" class="btn btn-primary btn-lg" role="button">发布博客</a></p>
+			<% }%>
+		</div>
+    </div>
+</div>
+
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-8">
+  <%  articles.forEach(function(data) {  %>
+  
+  <div class="">
+  	<div class="row">
+  		<div class="col-md-4">
+	  	  <a href="#" class="thumbnail">
+	      	<img data-src="holder.js/100%x180" alt="...">
+	      </a> 
+      	</div>
+      
+      <div class="col-md-8">
+        <h3><a href="/article/<%= data._id %>.html"><%= data.title %></a></h3>
+        <p>dsadsadsadsadsadsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p> 
+      </div>
+      </div>
+    </div> 
+  <% });  %>
+  	</div>
+  	<div class="col-md-8">.</div>
+  </div>
+  </div>
+  Generated on <%= Date() %>
+  <%= online %>
+  <% include common/footer%>
+  </body>
+</html>

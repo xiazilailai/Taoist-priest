@@ -1,0 +1,64 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+ol,ul {
+    list-style: none;
+}
+caption,th {
+    text-align: left;
+}
+/*h1,h2,h3,h4,h5,h6 {*/
+    /*font-weight: normal;*/
+    /*font-size: 100%;*/
+/*}*/
+q:before,q:after {
+    content:'';
+}
+abbr,acronym { border: 0;}
+
+
+/*功能*/
+.clear:after {content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clear{ *zoom:1; }
+.left{float: left}
+.right{float: right}
+.margincenter{margin: 0 auto}
+.alginmiddle{vertical-align: middle}
+.alginleft{text-align: left}
+.alginright{text-align: right}
+.algincenter{text-align: center}
+.absolute{position: absolute;}.fixed{    position: fixed;}.relative{ position: relative;}.static{position: static;}
+.p_bottom{bottom: 0;}.p_top{top: 0;}.p_left{left: 0;}.p_right{right: 0;}
+.block{display: blok;}.inline_block{display: inline-block;}.inline{display: inline;}.none{display: none}
+.full{width: 100%;}.hidden{visibility: hidden;}
+.no_border{border: none}.no_outline{outline: none;}
+/*内容*/
+.box{
+    width: 1200px;
+    min-height: 1px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.span8{    width: 200px;}.span16{    width: 400px;}.span24{    width: 600px;}
+.span32{    width: 800px;}.span40{    width: 1000px;}.span48{    width: 1200px;}
+.height2{  height: 50px;}.height4{  height: 100px;}.height6{  height: 150px;}
+.height8{  height: 200px;}.height10{  height: 250px;}.height12{  height: 300px;}
+.height14{  height: 350px;}.height16{  height: 400px;}.height18{  height: 450px;}
+.height20{  height: 500px;}.height22{  height: 550px;}.height24{  height: 600px;}
+.height26{  height: 650px;}.height28{  height: 700px;}.height30{  height: 750px;}
+.height32{  height: 800px;}.height34{  height: 850px;}.height36{  height: 900px;}
+.height38{  height: 950px;}.height40{  height: 1000px;}.height42{  height: 1050px;}
+.height44{  height: 1100px;}.height46{  height: 1150px;}.height48{  height: 1200px;}
