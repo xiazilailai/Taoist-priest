@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>nature</title>
+    <link rel="stylesheet" href="css/3d.css"/>
+    <script src="js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+
+<button id="click" >click</button>
+<button id="stop" >stop</button>
+<button id="run" >run</button>
+<div class="box">
+    <div id="content">
+        <div class="nature">  1 </div>
+        <div class="nature">  2 </div>
+        <div class="nature">  3 </div>
+        <div class="nature">  4 </div>
+        <div class="nature">  5 </div>
+        <div class="nature">  6 </div>
+    </div>
+</div>
+<script>
+    var node = $("#content");
+    node.children("div").each(function(i){
+        $(this).css({transform:   " rotateY("+(i*60)+"deg) translateZ("+(100/Math.tan(30*0.017453293))+"px)" });
+    });
+    var je= 0;
+    $("#click").on("click",function(){
+        je  += 10;
+        node.css({transform: " perspective(600px)  rotateY("+je+"deg)"});
+    });
+    var id;
+    var ro = 0;
+    function run(){
+        id = setInterval(function(){
+            ro++;
+            if(ro==360){
+                ro =0;
+            }
+            node.css({transform: "perspective(600px) rotateY("+(-1*ro)+"deg)"});
+        },15);
+    }
+    run();
+    $("#stop").on("click",function(){
+        clearInterval(id);
+        id = null;
+    });
+    $("#run").on("click",function(){
+        if(id===null){
+            run();
+        }
+    });
+
+</script>
+</body>
+</html>

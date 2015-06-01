@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>bigBall</title>
+    <link rel="stylesheet" href="css/bigBall.css"/>
+    <script src="js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <button id="stop" >stop</button>
+    <button id="run" >run</button>
+    <div class="content">    </div>
+</div>
+<script>
+    var r = 20;
+    var nodestr = '<div class="cube"></div>';
+
+    var content =  $(".content");
+    for(var i = 0 ; i< 72 ;i++){
+        content.append('<div class="cube">'+i+'</div>');
+    }
+    var node = $(".cube");
+    node.each(function(i){
+        $(this).css({transform: "rotateX("+((Math.floor(i/12))*30)+"deg) rotateY("+((i%12)*30)+"deg) translateZ("+(200)+"px)"});
+    });
+    var  id = null;
+    var ro = 0;
+    function run(){
+        id = setInterval(function(){
+            ro++;
+            if(ro==720){
+                ro =0;
+            }
+            content.css({transform: "perspective(600px) rotateX("+(0.5*ro)+"deg) rotateY("+(-1*ro)+"deg) rotateZ("+(1.5*ro)+"deg)"});
+//            content.css({transform: "perspective(600px) rotateX(30deg) rotateY("+(-1*ro)+"deg) rotateZ(45deg)"});
+        },15);
+    }
+    $("#stop").on("click",function(){
+        clearInterval(id);
+        id = null;
+    });
+    $("#run").on("click",function(){
+        if(id===null){
+            run();
+        }
+    });
+</script>
+</body>
+</html>

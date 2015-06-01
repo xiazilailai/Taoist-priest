@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>cube</title>
+    <link rel="stylesheet" href="css/ball.css"/>
+    <script src="js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <button id="stop" >stop</button>
+    <button id="run" >run</button>
+    <div class="cube" id="cube1">
+        <div class="nature">1</div>
+        <div class="nature">2</div>
+        <div class="nature">3</div>
+        <div class="nature">4</div>
+        <div class="nature">5</div>
+        <div class="nature">6</div>
+    </div>
+    <div class="cube" id="cube2" style="left: 900px">
+        <div class="nature">1</div>
+        <div class="nature">2</div>
+        <div class="nature">3</div>
+        <div class="nature">4</div>
+        <div class="nature">5</div>
+        <div class="nature">6</div>
+    </div>
+</div>
+<script>
+    var r = 20;
+    var node = $(".cube");
+    node.children("div").each(function(i){
+        switch ($(this).index()){
+            case 0 :  $(this).css({transform:   " rotateX(0deg) rotateY(0deg) translateZ("+r+"px)" });           break;
+            case 1 : $(this).css({transform:   " rotateX(0deg) rotateY(90deg) translateZ("+r+"px)" }) ;           break;
+            case 2 :  $(this).css({transform:   " rotateX(0deg) rotateY(180deg) translateZ("+r+"px)" });           break;
+            case 3 :  $(this).css({transform:   " rotateX(0deg) rotateY(270deg) translateZ("+r+"px)" });           break;
+            case 4 : $(this).css({transform:   " rotateX(90deg) rotateY(0deg) translateZ("+r+"px)" }) ;           break;
+            case 5 :  $(this).css({transform:   " rotateX(270deg) rotateY(0deg) translateZ("+r+"px)" });           break;
+        }
+    });
+    var  id = null;
+    var ro = 0;
+    function run(){
+        id = setInterval(function(){
+            ro++;
+            if(ro==720){
+                ro =0;
+            }
+            node.css({transform: "perspective(600px) rotateX("+(0.5*ro)+"deg) rotateY("+(-1*ro)+"deg) rotateZ("+(-1.5*ro)+"deg)"});
+        },15);
+    }
+    $("#stop").on("click",function(){
+        clearInterval(id);
+        id = null;
+    });
+    $("#run").on("click",function(){
+        if(id===null){
+            run();
+        }
+    });
+    var node1 = $("#cube1"),node2 = $("#cube2");
+    node1_p = {
+       x:node1.position().left
+        ,y:node1.position().top
+        ,z:0
+    };
+    console.log(node1.position());
+</script>
+</body>
+</html>

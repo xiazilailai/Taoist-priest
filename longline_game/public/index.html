@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <style type="text/css"></style>
+    <link rel="stylesheet" type="text/css" href=""/>
+    <script src="js/jquery-1.7.1.min.js"></script>
+</head>
+<body style="text-align: center;">
+<h2 style="text-align: center;">你的用户名<em id="js_username"></em></h2>
+
+<div style="position: relative;margin: 0 auto;overflow: hidden;height: 400px">
+    <div id="infoList" style="height: auto;position: absolute;bottom: 0;min-height: 400px;text-align: left;font-size: 12px;"></div>
+</div>
+<div style="text-align: center;">
+    <textarea name="info" id="info" cols="30" rows="10" style="resize: none;"></textarea>
+    <input id="senInfo" type="button" value="SEND" style="padding: 0 20px;"/>
+</div>
+<script>
+    var username;
+    $(function(){
+        function getname(){
+            $.ajax({
+                type:"post",dataType:"json",
+                url:"/getname",
+                success:function(data){
+                    username = data.username;
+                    $("#js_username").html(username);
+                    getInfo();
+                }
+            });
+        }
+        var jqXhr;
+        function getInfo(){
+            if(jqXhr){
+                jqXhr.abort();
+            }
+            jqXhr = $.ajax({
+                type:"post",dataType:"json",
+                url:"/getInfo",
+                data:{info:$("#info").val(),username:username},
+                timeout:20000,
+                success:function(data){
+                    if(data.todo){
+                        eval(""+data.todo)();
+                    }else{
+                        var htmlinfolist = "";
+                        for(var i = 0;i<data.length;i++){
+                            htmlinfolist += '<p>'+data[i]+'</p>'
+                        }
+                        $("#infoList").html(htmlinfolist);
+                        getInfo();
+                    }
+                },
+                error:function(e){
+                    if(e.statusText=="timeout"){
+                        getInfo();
+                    }
+//                    getInfo();
+                }
+            });
+        }
+        $("#senInfo").on("click",function(){
+            $.ajax({
+                type:"post",dataType:"json",
+                url:"/sendInfo",
+                data:{info:$("#info").val(),username:username},
+                success:function(data){
+                    $("#info").val("");
+                }
+            });
+        });
+
+        if(username==undefined){
+            getname();
+        }
+    });
+</script>
+</body>
+</html>
