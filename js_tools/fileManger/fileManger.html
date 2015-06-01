@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>fileManger</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="css/fileManger.css"/>
+    <link rel="stylesheet" href="../JQUI/jquery-ui.css"/>
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../JQUI/jquery-ui.js"></script>
+    <script src="../js/jquery.form.js"></script>
+    <script src="../js/Ajax.js"></script>
+    <script src="../js/maskLayer.js"></script>
+</head>
+<body class="padding"  id="#fileMange">
+<div class="border span40 clear inline_block js_content">
+    <div class="routeAndSearch clear ">
+        <!--<div class="span24 left">-->
+            <!--<div class="padding">-->
+                <!--<div class="padding border relative">-->
+                    <!--<input class="no_border no_outline full js_showRoute" value="" readonly/>-->
+                    <!--<button class="absolute reflesh smallfont js_reflesh"></button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="span24 right alginright">
+            <div class="padding span16 inline_block">
+                <div class="padding border inline_block">
+                    <input class="no_border no_outline search_inp js_search_inp" value=""/>
+                </div>
+                <button class="no_border no_outline smallfont search js_search"></button>
+            </div>
+        </div>
+    </div>
+    <div class="toolBar">
+        <!--<div class="padding bkGray">-->
+            <!--&lt;!&ndash;<button class="btn">上传</button>&ndash;&gt;-->
+        <!--</div>-->
+    </div>
+    <div class="clear">
+        <div class="left span8 dirList js-dirList relative">
+            <div class=" padding smallfont js_dirListContent" path="all">
+                <!--<ul>-->
+            </div>
+        </div>
+        <div class="js-fileList left span32 fileList relative">
+            <div class="docListContent js_docListContent">
+
+            </div>
+        </div>
+    </div>
+    <div class="fileDetails padding">
+        &nbsp;
+    </div>
+</div>
+<div class="UploaderProgress_dialog">
+    <div id="progressbar"></div>
+    <div class="padding"><label class="progressLabel">0%</label></div>
+</div>
+<div class="IMGUploader_dialog"></div>
+<div class="CreateDirUploader_dialog"></div>
+<div class="imgPreview none imgPreview_dialog" title="图片预览"><img src="" /><div></div></div>
+<script src="js/fileUpload.js"></script>
+<script src="js/fileManger.js"></script>
+</body>
+</html>

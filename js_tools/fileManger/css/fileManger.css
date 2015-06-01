@@ -1,0 +1,203 @@
+body,html{
+    /*height: 540px;*/
+    width: 1000px;
+}
+.toolBar{
+    border-bottom: 1px solid #c7c7c7;
+}
+.dirList{
+    overflow-y: auto;
+    overflow-x: auto;
+    height: 400px;
+}
+.fileList{
+    border-left: 1px solid #c7c7c7;
+    height: 400px;
+    margin-left: -1px ;
+    overflow-y: auto;
+}
+.fileDetails{
+    border-top: 1px solid #c7c7c7;
+}
+.reflesh{
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    right: -38px;
+    top: -1px;
+    border: 1px solid #c7c7c7;
+    outline: none;
+    background-color: transparent;
+    background-image: url("../images/relist.png");
+    background-position: 4px 5px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/*右键菜单*/
+#rightMenu ul{
+    padding: 5px;
+    border: 1px solid #515151;
+    border-radius: 3px;
+    background-color: #fefefe;
+}
+#rightMenu ul li{
+    width: 120px;
+    font-size: 12px;
+}
+#rightMenu ul li label{
+    border: 1px solid transparent;
+}
+#rightMenu ul li label:hover{
+    border: 1px solid #c7c7c7;
+    background-color: #ffdbd2;
+    border-radius: 2px;
+}
+#leftMenu ul{
+    padding: 5px;
+    border: 1px solid #515151;
+    background-color: #fefefe;
+    border-radius: 3px;
+}
+#leftMenu ul li{
+    width: 120px;
+    font-size: 12px;
+}
+#leftMenu ul li label{
+    border: 1px solid transparent;
+}
+#leftMenu ul li label:hover{
+    border: 1px solid #c7c7c7;
+    background-color: #ffdbd2;
+    border-radius: 2px;
+}
+
+/*
+文件夹列表
+*/
+.dir-fileDir{
+    padding: 5px 15px 5px 5px;
+}
+.dir-fileDir .dir-icon{
+    width: 24px;
+    height: 22px;
+    vertical-align: middle;
+    background-image: url("../images/open.png");
+    background-repeat: no-repeat;
+}
+.dir-open .dir-icon{
+    background-image: url("../images/close.png");
+}
+.dir-fileDir{
+    line-height: 32px;
+    width: 90%;
+    min-width: 150px;
+}
+.dir-fileDir label{
+    display: inline-block;
+    width: 70%;
+    min-width: 100px;
+    height: 32px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.dir-fileList{
+    padding: 5px 0 5px 15px ;
+}
+.dir-docment{
+    padding: 5px 0 5px 15px ;
+}
+.dir-docment label{
+    padding-left:  10px;
+}
+.search_inp{
+    width: 235px;
+}
+.search{
+    width: 36px;
+    height: 36px;
+    vertical-align: top;
+    border: 1px solid #c7c7c7;
+    background-color: transparent;
+    background-image: url("../images/sea.png");
+    background-position: 4px 5px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.bk_selected{
+    background-color: #737373;
+    color: #ffffff;
+}
+
+/*文件容器*/
+.docListContent{
+    padding: 5px;
+    text-align: left;
+}
+.littleBox{
+    width: 90px;
+    height: 120px;
+    display: inline-block;
+    padding: 4px;
+    margin: 10px 14px;
+    position: relative;
+    border: 1px solid #c7c7c7;
+    cursor: pointer;
+    background-color: #efefef;
+    box-shadow: 0 1px 1px 1px #efefef;
+}
+.doc_icon{
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    line-height: 90px;
+}
+.doc_icon img{
+    width: 90px;
+    vertical-align: middle;
+}
+.doc_name{
+    width: 90px;
+    height: 30px;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 15px;
+    word-wrap: break-word;
+}
+.doc_name label{
+    resize: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+}
+.littleBox_mc{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 130px;
+    background-image: url("../images/mc.png");
+}
+.doc_selected .littleBox_mc{
+    display:block;
+}
+.imgPreview{
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    background-color: #efefef;
+}
+.imgPreview img{
+    width: 400px;
+}
+.imgPreview div{
+    line-height: 20px;
+    font-size: 12px;
+    width: 390px;
+    color: #737373;
+    padding: 5px;
+    word-wrap: break-word;
+}
