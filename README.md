@@ -13,4 +13,4 @@
 ### 5、[ - js_tools](https://github.com/xiazilailai/Taoist-priest/tree/master/js_tools)
 这里面有一些贫道自己写的，有一些是常用的小插件。
 
-其中fileManger是需要.net的后台的，贫道只负责了前端的代码，所以能共享的就这么多了。
+其中fileManger是需要.net的后台的，贫道只负责了前端的代码，所以能共享的就这么多了，里面重写了鼠标右键的菜单，还有一个上传进度，也引用了一些jQuery.UI的东西。
