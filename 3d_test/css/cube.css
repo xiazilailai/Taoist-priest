@@ -9,7 +9,7 @@
     left: 500px;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
-    transform: perspective(600px) rotateX(15deg) rotateY(15deg);
+    /*transform: perspective(600px) rotateX(15deg) rotateY(15deg);*/
 }
 .nature{
     width: 198px;
