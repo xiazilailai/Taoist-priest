@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>sideCanvas 颗粒文字</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+        #canPre{
+            /*background-color: #000000;*/
+            margin: 0 auto;
+        }
+        .inputBox{
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+            padding-bottom: 5px;
+        }
+        .acceptInp{
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #FFFFFF;
+            background-color: transparent;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: #FFFFFF;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body onload="resetCan()" onresize="resetCan()">
+<canvas id="canPre" width="1920" height="768"></canvas>
+<div class="inputBox">
+    <input type="text" class="acceptInp" id="acceptInp" autofocus="true"/>
+</div>
+<script src="js/sideCanvas2.js"></script>
+</body>
+</html>
