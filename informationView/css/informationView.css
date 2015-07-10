@@ -1,0 +1,61 @@
+.viewBox{
+    width: 800px;
+    overflow: hidden;
+    height: 400px;
+}
+.axleY{
+    width: 50px;
+    /*height: 300px;*/
+    padding-top: 50px;
+    border-right: 1px solid #515151;
+}
+.axleX{
+    float: left;
+    height: 50px;
+    width: 750px;
+    border-top: 1px solid #515151;
+}
+.zero{
+    float: left;
+    width: 50px;
+    height: 50px;
+    text-align: right;
+    /*line-height: 50px;*/
+    font-weight: 800;
+}
+.yArrow{
+    left: 43px;
+    top: -2px;
+}
+.xArrow{
+    right: -2px;
+    top: -14px;
+}
+.yScale{
+    width: 55px;
+}
+.y_text{
+    width: 45px;
+    padding-right: 5px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: top;
+    text-align: right;
+}
+.y_scale{
+    height: 29px;
+    width: 5px;
+    border-top: 1px solid #515151;
+}
+.xScale{
+    width: 50px;
+    height: 20px;
+}
+.x_text{
+    width: 49px;
+    text-align: center;
+}
+.x_scale{
+    height: 5px;
+    border-right: 1px solid #515151;
+}

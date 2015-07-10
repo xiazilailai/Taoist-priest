@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/pub_sub.js"></script>
+</head>
+<body>
+<h1 style="text-align: center;padding: 20px;">主窗口</h1>
+<iframe src="iframe1.html" frameborder="1" width="400" height="400"></iframe>
+<iframe src="iframe2.html" frameborder="1" width="400" height="400"></iframe>
+<button class="pub">发布</button>
+<p style="padding: 0.1em;color: brown;" class="tips"></p>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script>
+$(".pub").on("click",function(){
+    window.top.Pub_Sub.pub("1","我是一条鱼,来自主窗口");
+    window.top.Pub_Sub.pub("2","我是二条鱼,来自主窗口");
+});
+window.top.Pub_Sub.sub("3","0",function(data){
+    $(".tips").html(data);
+});
+</script>
+</body>
+</html>

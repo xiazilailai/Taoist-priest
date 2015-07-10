@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1 style="text-align: center;padding: 20px;">窗口2</h1>
+<p style="padding: 0.1em;color: brown;" class="tips"></p>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script>
+    window.top.Pub_Sub.sub("2","0",function(data){
+        $(".tips").html(data);
+    });
+    window.top.Pub_Sub.sub("3","1",function(data){
+        $(".tips").html(data);
+    });
+</script>
+</body>
+</html>
