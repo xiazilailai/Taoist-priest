@@ -16,3 +16,5 @@
 其中fileManger是需要.net的后台的，贫道只负责了前端的代码，所以能共享的就这么多了，里面重写了鼠标右键的菜单，还有一个上传进度，也引用了一些jQuery.UI的东西。
 ### 6、[ - canvas_sideText](https://github.com/xiazilailai/Taoist-priest/tree/master/canvas_sideText)
 这是贫道新做的一个canvas绘制粒子文字的一个小玩意，配色不是很好，看久了眼花。
+### 7、[ - iframe通信](https://github.com/xiazilailai/Taoist-priest/tree/master/iframe%E9%80%9A%E4%BF%A1)
+简单的发布-订阅模式实现的主页与iframe，iframe与iframe之间的通信功能
