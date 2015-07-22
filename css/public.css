@@ -1,0 +1,38 @@
+body{
+    /*background: #FFFFFF url("img/bg.png") repeat ;*/
+    background-color: #efefef;
+    font-family: "隶书";
+}
+@font-face {
+    font-family: fontZh;
+    src: url("timeFontFamrity.ttf");
+}
+.box{
+    width: 1024px;
+    height: 768px;
+}
+.textContent{
+    padding: 5px;
+}
+.textBox{
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f262d;
+    line-height: 1.5em;
+    letter-spacing: 2px;
+    font-family: fontZh;
+}
+.typeInMark{
+    font-size: 12px;
+}
+.none{
+    display: none;
+}
+.bk_FFF{
+    background-color: #FFFFFF;
+}
+.testColor{
+    color: #f3a231;
+}
