@@ -19,4 +19,4 @@
 ### 7、[ - iframe通信](https://github.com/xiazilailai/Taoist-priest/tree/master/iframe%E9%80%9A%E4%BF%A1)
 简单的发布-订阅模式实现的主页与iframe，iframe与iframe之间的通信功能
 ### 8、[ - APPCan_canvas-upload](https://github.com/xiazilailai/Taoist-priest/tree/master/APPCan_canvas_upload)
-基于APPCan的一个头像上传插件。用例： img.src = "your IMG URL";
+基于APPCan的一个头像截图上传插件，支持手势放大缩小，移动位置。用例： img.src = "your IMG URL";
