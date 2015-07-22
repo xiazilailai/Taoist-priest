@@ -1,0 +1,418 @@
+body,span,label,div,button,p,a,table,textarea,section,option
+,img,h1,h2,h3,h4,h5,b,i,ul,li,input{
+    margin: 0;
+    padding: 0;
+    /*font-family: "宋体";*/
+}
+.um-vp {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    background: #FFFFFF;
+    z-index: 9;
+}
+.ubt{
+    border-top: 1px solid transparent;
+}
+.ihead{
+    width: 100%;
+    height: 3em;
+}
+.um-back1{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    background-color: #f8f8f8;
+}
+.um-back2{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    background-color: #e6e6e6;
+}
+.um-back3{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    background-color: #f4f4f4;
+}
+/*hidden*/
+.ui-hd{
+    overflow: hidden;
+}
+/*颜色*/
+.colorWhite{
+    color: white;
+}
+.colorAe{
+    color: #aeaeae;
+}
+.colorc8{
+    color: #b9bbbc;
+}
+.color9b{
+    color: #9b9b9b;
+}
+.color81{
+    color:#818181;
+}
+.color666{
+    color: #666;
+}
+.color56{
+    color: #565656;
+}
+.color33{
+    color: #333333;
+}
+.color00{
+    color: #000;
+}
+.colorRed{
+    color: #f53926;
+}
+.colorfdafaf{
+    color: #fdafaf;
+}
+.colorf93{
+    color: #f93;
+}
+.colorBlue{
+    color:#409bff
+}
+.integral-all-sp1{
+    color: #3d9e1e;
+}
+
+/*背景色*/
+.bc-bg{
+    background-color: #eeeeee;
+}
+.bj-white{
+    background-color: white;
+}
+.bj-2d{
+    background-color: #2d3845;
+}
+.bj-ccc{
+    background-color: #ccc;
+}
+.bj-a7{
+    background-color: #bcbcbc;
+}
+.bj-e3{
+    background-color: #e3e3e3;
+}
+.bj-e6{
+    background-color: #e6e6e6;
+}
+.bj-f8{
+    background-color: #f8f8f8;
+}
+.bj-fd6f3d{
+    background-color: #fd6f3d;
+}
+.bj-orange{
+    background-color: #da2725;
+}
+.bj-fc3{
+    background-color: #FFCC33;
+}
+.bj-blue{
+    background-color: #00bbff;
+}
+.bj-green{
+    background-color: #27ca6d;
+}
+.bj-red{
+    background-color: #fd4d4d;
+}
+.bj-fdafaf{
+    background-color: #fdafaf;
+}
+.bj-f4f4f4{
+    background-color: #f4f4f4;
+}
+/*漂浮*/
+.left{
+    float: left;
+}
+.rigth{
+    float: right;
+}
+/*清除浮动*/
+.clearFloat{
+    clear: both;
+    overflow: hidden;
+}
+
+/*字体大小*/
+.fs012{
+    font-size: 1.2em;
+}
+.fs010{
+    font-size: 1em;
+}
+.fs009{
+    font-size: 0.9em;
+}
+.fs008{
+    font-size:0.8em;
+}
+.fs007{
+    font-size: 0.7em;
+}
+/*input框字体大小*/
+.input-fs{
+    font-size:0.8125em;
+}
+/*padding的值*/
+.padding-a{
+    padding: 0 0.5em;
+}
+/*字重*/
+.fw8{
+    font-weight: 800;
+}
+.fw6{
+    font-weight: 600;
+}
+.fw4{
+    font-weight: 400;
+}
+/*字体样式*/
+.ff{
+    font-family: "微软雅黑";
+}
+.fzh{
+    font-family: fontZh;
+}
+/*字体居中方式*/
+.text-c{
+    text-align: center;    
+}
+.text-l{
+    text-align: left;
+}
+.text-r{
+    text-align: right;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+/*inline-block*/
+.inblock{
+    display: inline-block;
+}
+/*容器下的img 宽和高100%*/
+/*有边框的情况*/
+.dis-img{
+    width: 99%;
+    height: 99%;
+}
+/*无边框的情况*/
+.dis-img02{
+    width: 100%;
+    height: inherit;
+}
+.disWindow-img{
+    width: 100%;
+}
+/*父级相对定位*/
+.relative{
+    position: relative;
+    left: 0;
+    top: 0;
+}
+/*子级绝对定位 left和top为0*/
+.absolute00{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/*子级绝对定位  left和top 需根据情况在单独的css里自己设置*/
+.absolute{
+    position: absolute;
+}
+.absolute-LT{
+    left: 0;
+    top:20%;
+}
+/*隐藏*/
+.display-none{
+    display: none;
+}
+/*显示*/
+.display-block{
+    display: block;
+}
+/*顶部固定*/
+.top-fix{
+    position: fixed;
+    top: 0;
+    z-index: 10
+}
+/*底部固定*/
+.bottom-fix{
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+
+}
+/*主页一套 底部样式*/
+.bottom-box{
+    width: 100%;
+    height: 4em;
+    /*position: fixed;*/
+    /*bottom: 0;*/
+    /*z-index: 10;*/
+    
+}
+.bottom-box div{
+    width: 20%;
+    height: 4em;
+    background-color: #f4f4f4;
+}
+.bottom-box div img{
+    margin-top: 0.5em;
+    width: 1.5em;
+    height: 1.5em;
+}
+.bottom-box div p{
+    font-size: 0.9em;
+    margin-top: 0.2em;
+}
+/*最下边图片变色的类*/
+/*主页*/
+.indexIcon_a{
+    background: url("../image/imgSection/zy.png");
+}
+.indexIcon_0{
+    background: url("../image/imgSection/zyhs.png");
+}
+/*买单*/
+.indexIcon_b{
+    background: url("../image/imgSection/mdh.png");
+}
+.indexIcon_1{
+    background: url("../image/imgSection/mdhs.png");
+}
+/*搜索*/
+.indexIcon_c{
+    background: url("../image/imgSection/ssou.png");
+}
+.indexIcon_2{
+    background: url("../image/imgSection/sshs.png");
+}
+/*购物车*/
+.indexIcon_d{
+    background: url("../image/imgSection/gwc.png");
+}
+.indexIcon_3{
+    background: url("../image/imgSection/gwcc.png");
+}
+/*我的*/
+.indexIcon_e{
+    background: url("../image/imgSection/heyh.png");
+}
+.indexIcon_4{
+    background: url("../image/imgSection/yh.png");
+}
+/*公共*/
+.indexIcon{
+    display: inline-block;
+    margin-top: 0.5em;
+    width: 1.5em;
+    height: 1.5em;
+    background-size: 1.5em 1.5em;
+}
+/*content下边空4em 上边空3em 因头高3em，底部高4em*/
+.clearContentTop{
+    margin-top: 3em;
+}
+.clearContentBottom{
+    margin-bottom: 4em;
+}
+
+/*轮播部分  以下部分注释了的高度和top值 需在单独的css里 根据不同需求高度 单独设置  */
+.lunbo{
+    /*height: 7em;*/
+    overflow: hidden;
+    width: 100%;
+    height:auto;
+    text-align: center;
+}
+.lunbo:after{
+    content:" ";
+    display: block;
+    clear: both;
+}
+.ppt{
+    height: auto;
+}
+.clear{
+    overflow: hidden;    
+}
+.clear:after{
+    content: " ";
+    display: block;
+    clear: both;    
+}
+.lunbo-img{
+    /*height: 7em;*/
+    width: 100%;
+    height: auto;
+}
+.ub-fh01{
+    width: 33%;
+    height:2.5em;
+    line-height:2.5em;
+}
+/*轮播索引*/
+.lunboIndexBox{
+    width: 100%;
+    height: 1em;
+    left: 0;
+    /*top: 83%;*/
+   top:auto;
+   bottom: 0.4em;
+}
+.lunboIndex{
+    width: 0.6em;
+    height: 0.6em;
+    display: inline-block;
+    margin: auto;
+    border-radius: 50%;
+}
+/*=== ==  appcan.button部分  =======*/
+/*按钮透明度*/
+.btn-act {
+    opacity: 0.6
+}
+/*按钮缩小动画*/
+.ani-act {
+    transform: scale(0.95,0.97);
+    -webkit-transform: scale(0.95,0.97);
+    -webkit-transition-duration: 300ms;
+    opacity: .7;
+}
+@font-face {
+    font-family: fontZh;
+    src: url("timeFontFamrity.ttf");
+}
+

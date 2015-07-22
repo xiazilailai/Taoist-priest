@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="css/ui-box.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/public.css"/>
+    <!--<link rel="stylesheet" href="../css/ui-color.css">-->
+    <!--<link rel="stylesheet" href="../css/appcan.icon.css">-->
+    <!--<link rel="stylesheet" href="../css/appcan.control.css">-->
+    <style>
+        #clipBox{
+            width: 100%;
+            /*max-width: 600px;*/
+            /*border: 1px solid #636363;*/
+            position: relative;
+            /*overflow: hidden;*/
+            margin:  auto;
+            /*background-color: #636363;*/
+        }
+        #bg{
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
+            /*z-index: 70;*/
+            background-color: #23272f;
+        }
+        #mc{
+            position: absolute;
+            z-index: 200;
+            top: 0 ;
+            left: 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+        #fg{
+            position: absolute;
+            z-index: 90;
+            top: 40%;
+            left: 40%;
+            box-shadow:  0 0 1px 1px #ff0000;
+            background-color: #636363;
+            /*border: 1px solid #636363;*/
+        }
+        #hidden{
+            height: 0;
+            overflow: hidden;
+        }
+        #upload{
+            display: inline-block;
+            border: none;
+            outline: none;
+            border-radius: 0.2em;
+            width: 80%;
+            height: 2em;
+            font-size: 1.2em;
+            font-weight: 800;
+            color: #FFFFFF;
+            padding: 0.2em ;
+            margin: 1em;
+        }
+        .btn{
+            font-size: 1.2em;
+            color: #FFFFFF;
+            padding: 0.2em 0.5em;
+            border: none;
+            border-radius: 0.2em;
+            position: absolute;
+            z-index: 99;
+            bottom: 0.1em;
+        }
+        .left{
+            left: 0.1em;
+        }
+        .right{
+            right: 0.1em;
+        }
+    </style>
+</head>
+<body class="um-vp bc-bg" ontouchstart>
+<div id="clipBox">
+    <canvas id="bg" width="0" height="0"></canvas>
+    <div id="mc">
+        <canvas id="fg" width="0" height="0"></canvas>
+        <span id="smaller" class="bj-orange btn left">缩小</span><span id="bigger" class="bj-orange btn right">放大</span>
+    </div>
+</div>
+<div id="hidden">
+    <canvas id="hg" width="196" height="196"></canvas>
+</div>
+<div style="text-align: center;position: fixed;bottom: 0.2em;width: 100%;"><button id="upload" class="bj-orange">确定</button></div>
+<div id="data"></div>
+<script src="js/appcan.js"></script>
+<script src="js/appcan.control.js"></script>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/public.js"></script>
+</body>
+<script>
+    appcan.ready(function() {
+        var clipBox = jQuery("#clipBox") ,  w = clipBox.width(), mc = jQuery("#mc") ;
+        clipBox.css({height:w});
+        mc.css({width: w ,height: w});
+        var bg = document.getElementById("bg"), fg = document.getElementById("fg"), hg = document.getElementById("hg"), bgctx = bg.getContext("2d") , fgctx = fg.getContext("2d") , hgctx = hg.getContext("2d");
+        bg.width = w ;
+        bg.height = w ;
+        fg.width = w/2 ;
+        fg.height = w/2 ;
+        var delFG =  w/4;
+        jQuery(fg).css({top : delFG , left : delFG});
+        var img = new Image(), imgw, imgh,iw,ih,bi ;
+        img.crossOrigin="anonymous"; //关键
+        function resizeImg(){
+            imgw = img.width;
+            iw = imgw;
+            imgh = img.height;
+            ih = imgh;
+            bi = imgh/imgw;
+            if(iw > w){
+                iw = w;
+                ih = Math.floor(w*bi);
+            }
+            drawImg(img,iw,ih);
+        }
+        img.onload = function(){
+//            alert("onload");
+            if(timeoverID) clearTimeout(timeoverID);
+            resizeImg();
+        };
+        function waitting(){
+//            alert("waitting");
+            if(img.width != 0){
+                resizeImg();
+            }else{
+                alertFun(1,0,5,"读取图片超时，请重试",500);
+                timeoverID = setTimeout(waitting,1000);
+            }
+        }
+        var timeoverID = setTimeout(waitting,1000);
+        function resetClipBox(src){
+            img = null;
+            img = new Image();
+            img.src = src;
+        }
+        jQuery("#smaller").on("touchstart",function(){
+            if(iw >= 196 || ih>= 196){
+                iw =parseInt((iw*0.9));
+                ih = parseInt((ih*0.9));
+                drawImg(img,iw,ih);
+            }
+        });
+        jQuery("#bigger").on("touchstart",function(){
+            iw =parseInt((iw*1.1));
+            ih = parseInt((ih*1.1));
+            drawImg(img,iw,ih);
+        });
+        function drawImg(img,iw,ih){
+            bgctx.clearRect(0,0,w, w);
+            bgctx.beginPath();
+            bgctx.fillStyle="rgba(255,255,255,1)";
+            bgctx.rect( 0, 0 , w , w);
+            bgctx.closePath();
+            bgctx.fill();
+            bgctx.drawImage(img,0,0, imgw, imgh , (w - iw)/2 + dirtyX , (w - ih)/2 + dirtyY , iw, ih );
+            drawClip();
+        }
+        function drawClip(){
+            var imgData = bgctx.getImageData(delFG , delFG , w/2 , w/2);
+            fgctx.clearRect(0,0,w/2,w/2);
+            fgctx.putImageData(imgData ,0,0);
+        }
+        var dragState = "";
+        var sx,sy,dfx,dfy,fx,fy,dirtyX = 0,dirtyY = 0;
+        var oldL = 0, nowL = 0, tiw = 0, tih =0;
+        jQuery(clipBox).on("touchstart",function(e){
+            event.preventDefault();
+            oldL = 0;
+            tiw = 0;
+            tih =0;
+            if(event.targetTouches.length ==1 ){
+                dragState = "down";
+                fx= dirtyX;
+                fy= dirtyY;
+                sx = event.targetTouches[0].clientX;
+                sy = event.targetTouches[0].clientY;
+//                jQuery("#data").html("");
+            }
+            if(event.touches.length > 1){
+                dragState = "";
+//                jQuery("#data").html(event.touches.length + " X1 : " + event.touches[0].clientX +" Y1 : "+ event.touches[0].clientY+ " X2 : " + event.touches[1].clientX +" Y2 : "+ event.touches[1].clientY);
+                oldL = Math.sqrt(Math.pow(event.touches[0].clientX - event.touches[1].clientX,2) + Math.pow( event.touches[0].clientY -  event.touches[1].clientY,2));
+                tiw = 0;
+                tih =0;
+            }
+        });
+        jQuery(clipBox).on("touchmove",function(e){
+            event.preventDefault();
+            if(dragState == "down" && event.touches.length == 1){
+                dfx = event.targetTouches[0].clientX - sx;
+                dfy = event.targetTouches[0].clientY - sy;
+                dirtyX  = fx + dfx;
+                dirtyY  = fy + dfy;
+                drawImg(img,iw,ih);
+            }
+            if(event.touches.length > 1){
+//                jQuery("#data").html(event.touches.length + " X1 : " + event.touches[0].clientX +" Y1 : "+ event.touches[0].clientY+ " X2 : " + event.touches[1].clientX +" Y2 : "+ event.touches[1].clientY);
+                nowL = Math.sqrt(Math.pow(event.touches[0].clientX - event.touches[1].clientX,2) + Math.pow( event.touches[0].clientY -  event.touches[1].clientY,2));
+                if(oldL && nowL){
+                    tiw =parseInt((iw*nowL/oldL));
+                    tih = parseInt((ih*nowL/oldL));
+                    drawImg(img,tiw,tih);
+                }
+            }
+
+        });
+        jQuery("body,html").on("touchend",function(e){
+            event.preventDefault();
+            dragState = "";
+            if(tiw) iw = tiw;
+            if(tih) ih = tih;
+            tiw = 0;
+            tih =0;
+            drawImg(img,iw,ih);
+
+        });
+        jQuery(window).on("touchcancel",function(e){
+/*            if(dragState == "down"){
+                dragState = "";
+                if(tiw) iw = tiw;
+                if(tih) ih = tih;
+                tiw = 0;
+                tih =0;
+                drawImg(img,iw,ih);
+            }*/
+            dragState = "";
+            if(tiw) iw = tiw;
+            if(tih) ih = tih;
+            tiw = 0;
+            tih =0;
+            drawImg(img,iw,ih);
+        });
+
+        jQuery("#upload").on("touchstart",upload);
+        function upload(){
+            jQuery("#upload").off("click");
+            alertFun(1, 1 , 5 , "正在上传！",800);
+            var bigstr = fg.toDataURL('image/jpg');
+            var himg = new Image();
+            himg.onload = function(){
+                hgctx.clearRect(0,0,hg.width,hg.height);
+                hgctx.drawImage(himg ,0,0, himg.width , himg.height ,0,0, 196 , 196);
+                var str = hg.toDataURL('image/jpg').replace("data:image/png;base64,","");
+                var upAjax = new Ajax("/UploadTool/Ajax.ashx?Mobile=upload");
+                upAjax.data = {input : window.localStorage.userID , content : str};
+                upAjax.success = function(data){
+                    alertFun(1,0 , 5 , "上传成功！",800);
+                    jQuery("#upload").on("click",upload);
+                    uexWindow.publishChannelNotification("20","null");
+                    uexWindow.evaluateScript('', 0, "appcan.window.close(-1)");
+                };
+                upAjax.error = function(e){
+                    alertFun(1,0 , 5 , "上传失败！",800);
+                    jQuery("#upload").on("click",upload);
+                };
+                upAjax.send();
+            };
+            himg.src = bigstr;
+        }
+
+        /*
+         * 初始化！！！
+         * */
+//        var path = window.localStorage.uploadImgPath;
+        img.src = "DMhead.png";
+//        img.src = "../image/dm/DMhead.png";
+        alertFun(1,1,5,"正在打开图片...",800);
+        if(img.complete){
+//            alert("complete");
+            if(timeoverID) clearTimeout(timeoverID);
+            resizeImg();
+        }
+    });
+</script>
+</html>
