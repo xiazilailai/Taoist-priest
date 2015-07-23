@@ -108,6 +108,7 @@ a{
 .copy{
     text-align: center;
     font-family:fontZh , "楷体" ;
+    color:#668f79;
     font-size: 14px;
-    text-shadow: 1px 1px 1px #FFF;
+    text-shadow: 1px 1px 1px #000;
 }
