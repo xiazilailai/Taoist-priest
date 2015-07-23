@@ -1,15 +1,12 @@
 body{
-    /*background: #FFFFFF url("img/bg.png") repeat ;*/
-    background-color: #efefef;
-    font-family: "隶书";
+    background: #FFFFFF url("../img/bg.png") repeat ;
 }
 @font-face {
     font-family: fontZh;
     src: url("timeFontFamrity.ttf");
 }
-.box{
-    width: 1024px;
-    height: 768px;
+.layer{
+    padding-top: 39px;
 }
 .textContent{
     padding: 5px;
@@ -35,4 +32,82 @@ body{
 }
 .testColor{
     color: #f3a231;
+}
+nav{
+    border-bottom: 1px solid #7c7c7c;
+}
+nav>.box>div{
+    margin-right: 1px;
+}
+nav>.box>div>a{
+    display: inline-block;
+    width: 6em;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+}
+nav>.box>div>a:hover{
+    cursor: pointer;
+    background-color: #35b291;
+}
+a{
+    color: inherit;
+    border: none;
+}
+.leftside{
+    float: left;
+    width: 360px;
+    margin: 8px;
+}
+.rightside{
+    float: left;
+    width: 640px;
+    margin: 8px 0;
+}
+.mt{
+    margin-top: 8px;
+}
+.contBox{
+    padding: 2px;
+}
+.headIcon{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+.headIcon>a>img{
+    width: 100%;
+    margin-top: -20px;
+}
+.infos{
+    margin-left: 2px;
+    padding-left: 2px;
+    width: 250px;
+    height: 100px;
+    overflow: hidden;
+}
+.user-info{
+    font-family:fontZh , "楷体" ;
+    line-height: 20px;
+}
+.info-title{
+    color: #234432;
+    font-weight: 600;
+}
+.info-value{
+    color: #178bf0;
+}
+#footer{
+    border-top: 1px solid #234432;
+}
+.footer{
+    padding: 1em 0;
+    background-color: #234432;
+    border-top: 1px solid #668f79;
+}
+.copy{
+    text-align: center;
+    font-family:fontZh , "楷体" ;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px #FFF;
 }
