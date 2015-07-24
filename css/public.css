@@ -97,6 +97,9 @@ a{
 .info-value{
     color: #178bf0;
 }
+.info-value a:hover{
+    color: #668f79;
+}
 #footer{
     border-top: 1px solid #234432;
 }
@@ -111,4 +114,45 @@ a{
     color:#668f79;
     font-size: 14px;
     text-shadow: 1px 1px 1px #000;
+}
+.numBox{
+    width: 60px;
+    height: 100px;
+    float: left;
+    margin-left: 16px;
+    /*border: 1px solid #EFEFEF;*/
+}
+.beNum{
+    width: 20px;
+    height: 40px;
+    padding: 10px 0;
+    float: left;
+    margin-left: 16px;
+}
+.numPoint{
+    display: block;
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin: 1px;
+    background-color: #f1fbfe;
+}
+.light{
+    background-color: #178bf0;
+}
+.beNum .numPoint{
+    /*background-color: #234432;*/
+    margin: 10px 1px ;
+}
+.beNum .light{
+    background-color: #178bf0;
+}
+.resumeBox{
+    background-color: #f1fbfe;
+}
+.resumeContent{
+    padding: 2px 5px;
+}
+.appBox{
+    width: 310px;
 }
