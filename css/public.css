@@ -41,7 +41,7 @@ nav>.box>div{
 }
 nav>.box>div>a{
     display: inline-block;
-    width: 6em;
+    padding: 0 2.5em;
     height: 3em;
     line-height: 3em;
     text-align: center;
