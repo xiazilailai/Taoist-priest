@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <style>
+        .trBox{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left: 400px;
+            top: 200px;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+        .trBox2{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            /*border: 1px solid #000000;*/
+        }
+        .tr{
+            width: 98px;
+            height: 1px;
+            border: 1px solid #178bf0;
+            position: absolute;
+            top: 49px;
+            left: 0;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+        .ground{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background-color: rgba(23, 139, 240, 0.47);
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transform: perspective(600px) rotateX(90deg) ;
+        }
+        .point{
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            top: 195px;
+            left: 195px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+<h2 style="text-align: center"> 20 Test </h2>
+<div class="trBox">
+    <!--<div class="ground"></div>-->
+    <div class="trBox2">
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+    </div>
+</div>
+<button class="begin">开始</button>
+<button class="stop">暂停</button>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script>
+    var deg = 180 - Math.asin((3*Math.sqrt(3)+Math.sqrt(15))/(3*Math.sqrt(5)+3))/Math.PI*180*2;
+    var m=(Math.sqrt(50-10*Math.sqrt(5)))/10, n=(Math.sqrt(50+10*Math.sqrt(5)))/10,o=0;
+    $(".trBox2").children(".point").each(function(i){
+        if(i ==0 ) $(this).css({transform: " perspective(600px) translateX("+10*m+"pc) translateY("+10*o+"px) translateZ("+10*n+"px)" });
+        if(i ==1 ) $(this).css({transform: " perspective(600px) translateX("+10*m+"pc) translateY("+10*o+"px) translateZ("+-10*n+"px)" });
+        if(i ==2 ) $(this).css({transform: " perspective(600px) translateX("+-10*m+"pc) translateY("+10*o+"px) translateZ("+10*n+"px)" });
+        if(i ==3 ) $(this).css({transform: " perspective(600px) translateX("+-10*m+"pc) translateY("+10*o+"px) translateZ("+-10*n+"px)" });
+        if(i ==4 ) $(this).css({transform: " perspective(600px) translateX("+10*o+"pc) translateY("+10*n+"px) translateZ("+10*m+"px)" });
+        if(i ==5 ) $(this).css({transform: " perspective(600px) translateX("+10*o+"pc) translateY("+10*n+"px) translateZ("+-10*m+"px)" });
+        if(i ==6 ) $(this).css({transform: " perspective(600px) translateX("+10*o+"pc) translateY("+-10*n+"px) translateZ("+10*m+"px)" });
+        if(i ==7 ) $(this).css({transform: " perspective(600px) translateX("+10*o+"pc) translateY("+-10*n+"px) translateZ("+-10*m+"px)" });
+        if(i ==8 ) $(this).css({transform: " perspective(600px) translateX("+10*n+"pc) translateY("+10*m+"px) translateZ("+10*o+"px)" });
+        if(i ==9 ) $(this).css({transform: " perspective(600px) translateX("+10*n+"pc) translateY("+-10*m+"px) translateZ("+10*o+"px)" });
+        if(i ==10 ) $(this).css({transform: " perspective(600px) translateX("+-10*n+"pc) translateY("+10*m+"px) translateZ("+10*o+"px)" });
+        if(i ==11 ) $(this).css({transform: " perspective(600px) translateX("+-10*n+"pc) translateY("+-10*m+"px) translateZ("+10*o+"px)" });
+    });
+
+    var cont =0,showID;
+    function beginShow(){
+        showID = setInterval(function(){
+            cont++;
+            $(".trBox").css({transform: " perspective(600px) rotateX("+-cont+"deg)   rotateY("+-cont+"deg)   rotateZ("+-cont+"deg)  " });
+        },20);
+    }
+    $(".begin").on("click",function(){
+        cont++;
+        $(".trBox").css({transform: " perspective(600px) rotateX("+-cont*10+"deg)   rotateY("+-cont*10+"deg)   rotateZ("+-cont*10+"deg)  " });
+    });
+    $(".stop").on("click",function(){
+        if(showID) clearInterval(showID);
+    });
+    beginShow();
+</script>
+</body>
+</html>

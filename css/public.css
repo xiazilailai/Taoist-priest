@@ -1,0 +1,166 @@
+body{
+    background: #FFFFFF url("../img/bg12.png") repeat ;
+}
+@font-face {
+    font-family: fontZh;
+    src: url("timeFontFamrity.ttf");
+}
+.layer{
+    padding-top: 39px;
+}
+.textContent{
+    padding: 5px;
+}
+.textBox{
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f262d;
+    line-height: 1.5em;
+    letter-spacing: 2px;
+    font-family: fontZh;
+}
+.typeInMark{
+    font-size: 12px;
+}
+.none{
+    display: none;
+}
+.bk_FFF{
+    background-color: #FFFFFF;
+}
+.testColor{
+    color: #f3a231;
+}
+nav{
+    border-bottom: 1px solid #7c7c7c;
+}
+nav>.box>div{
+    margin-right: 1px;
+}
+nav>.box>div>a{
+    display: inline-block;
+    padding: 0 2.5em;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+}
+nav>.box>div>a:hover{
+    cursor: pointer;
+    background-color: #35b291;
+}
+a{
+    color: inherit;
+    border: none;
+}
+.leftside{
+    float: left;
+    width: 360px;
+    margin: 8px;
+}
+.rightside{
+    float: left;
+    width: 640px;
+    margin: 8px 0;
+}
+.mt{
+    margin-top: 8px;
+}
+.contBox{
+    padding: 2px;
+}
+.outContent{
+    top: 70px;
+    bottom: auto;
+    left: 2px;
+    right: auto;
+}
+.headIcon{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+.headIcon>a>img{
+    width: 100%;
+    margin-top: -20px;
+}
+.infos{
+    margin-left: 2px;
+    padding-left: 2px;
+    width: 250px;
+    height: 100px;
+    overflow: hidden;
+}
+.user-info{
+    font-family:fontZh , "楷体" ;
+    line-height: 20px;
+}
+.info-title{
+    color: #234432;
+    font-weight: 600;
+}
+.info-value{
+    color: #178bf0;
+}
+.info-value a:hover{
+    color: #668f79;
+}
+#footer{
+    border-top: 1px solid #234432;
+}
+.footer{
+    padding: 1em 0;
+    background-color: #234432;
+    border-top: 1px solid #668f79;
+}
+.copy{
+    text-align: center;
+    font-family:fontZh , "楷体" ;
+    color:#668f79;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px #000;
+}
+.numBox{
+    width: 60px;
+    height: 100px;
+    float: left;
+    margin-left: 16px;
+    /*border: 1px solid #EFEFEF;*/
+}
+.beNum{
+    width: 20px;
+    height: 40px;
+    padding: 10px 0;
+    float: left;
+    margin-left: 16px;
+}
+.numPoint{
+    display: block;
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin: 1px;
+    background-color: transparent;
+}
+.light{
+    background-color: #178bf0;
+}
+.beNum .numPoint{
+    /*background-color: #234432;*/
+    margin: 10px 1px ;
+}
+.beNum .light{
+    background-color: #178bf0;
+}
+.resumeBox{
+    background-color: #f1fbfe;
+}
+.resumeContent{
+    padding: 2px 5px;
+}
+.appBox{
+    width: 310px;
+}
+
+

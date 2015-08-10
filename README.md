@@ -1,6 +1,7 @@
 # Taoist-priest
 ### Taoist-priest by nqmy
 这些是贫道闲暇时间的做的一些感兴趣的小玩意，以及收集的一些js小插件，其实我更喜欢玩原生的。<br/>
+### 利用github的个人首页— [http://xiazilailai.github.io/Taoist-priest](http://xiazilailai.github.io/Taoist-priest/)
 <br	/>
 ### 1、[- upload-img_canvas](https://github.com/xiazilailai/Taoist-priest/tree/master/upload_img_canvas)
 这是一个利用canvas，来进行图片切割并上传的工具，对IE的支持不太优秀(主要是由于IE比较坑)。<br>

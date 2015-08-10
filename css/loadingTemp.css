@@ -1,0 +1,75 @@
+.loading_box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.5);
+    line-height: normal;
+    font-size: 14px;
+}
+
+/*条形进度条*/
+.loading_bar_box{
+    position: relative;
+    width: 90%;
+    height: 16px;
+    margin: 10px auto;
+    background-color: #0cccfe;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.loading_bar{
+    height: 16px;
+    width: 0;
+    border-radius: 2px;
+    background-color: #ffa200;
+}
+.loading_bar_text{
+    position: absolute;
+    top: 0;
+    color: #FFFFFF;
+    left: 49%;
+}
+
+
+/*圆圈进度条*/
+.loading_circle_box{
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #ff941c;
+    position: relative;
+}
+.loading_semi_circle1{
+    position: absolute;
+    left: 0;
+    background-color: #FFFFFF;
+    transform-origin: 100% 50%;
+    /*transform: rotateZ(50deg);*/
+    z-index: 1;
+}
+.loading_semi_circle2{
+    position: absolute;
+    left: 50%;
+    background-color: #ff941c;
+    z-index: 2;
+}
+.loading_semi_circle3{
+    position: absolute;
+    z-index: 3;
+    /*border-bottom-left-radius: ;*/
+    transform-origin: 0% 50%;
+    /*transform: rotateZ(50deg);*/
+    left: 0;
+    background-color: #FFFFFF;
+}
+.loading_circle_box2{
+    position: absolute;
+    border-radius: 50%;
+    background-color: #0cccfe;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 4;
+    text-align: center;
+}
+

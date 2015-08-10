@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <style>
+        .trBox{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+        .trBox2{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            /*border: 1px solid #000000;*/
+        }
+        .tr{
+            width: 98px;
+            height: 1px;
+            border: 1px solid #178bf0;
+            position: absolute;
+            top: 49px;
+            left: 0;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+    </style>
+</head>
+<body>
+<h2 style="text-align: center"> 20 Test </h2>
+<div class="trBox">
+    <div class="trBox1">
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+    </div>
+    <div class="trBox1">
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+    </div>
+    <div class="trBox1">
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+    </div>
+    <div class="trBox1">
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+    </div>
+    <div class="trBox1">
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+    </div>
+    <div class="trBox1">
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+        <div class="trBox2"><div class="tr"></div><div class="tr"></div><div class="tr"></div></div>
+    </div>
+</div>
+<button class="begin">开始</button>
+<button class="stop">暂停</button>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script>
+    var deg = 180 - Math.asin((3*Math.sqrt(3)+Math.sqrt(15))/(3*Math.sqrt(5)+3))/Math.PI*180*2;
+
+    $(".trBox").children(".trBox1").each(function(i){
+        $(this).css({transform: " perspective(600px)  translateX("+ (i)*98+"px)  " });
+        var temp = this;
+        (function(){
+            $(temp).children(".trBox2").each(function(i){
+//        $(this).css({transform: " perspective(600px)  translateY("+ 98 *((3*Math.sqrt(3) + Math.sqrt(15))/12 )+"px)  " });
+                if(i==0)$(this).css({transform: " perspective(600px)  translateY("+ (2)*49*(1/Math.sqrt(3))+"px)  " });
+                if(i==1)$(this).css({transform: " perspective(600px)  translateY("+ (0)*49*(1/Math.sqrt(3))+"px)  " });
+                if(i==2)$(this).css({transform: " perspective(600px)  translateY("+ (-1)*49*(1/Math.sqrt(3))+"px) translateX("+ 49+"px)  " });
+                if(i==3)$(this).css({transform: " perspective(600px)  translateY("+ (-3)*49*(1/Math.sqrt(3))+"px)  translateX("+ 49+"px)  " });
+                var temp = this;
+                (function(){
+                    var j = i;
+                    $(temp).children(".tr").each(function(i){
+                        if(j%2){
+                            if(i%2){
+                                $(this).css({transform: " perspective(600px) rotateZ("+i*60+"deg) translateY("+ -49*(1/Math.sqrt(3))+"px)  " });
+                            }else{
+                                $(this).css({transform: " perspective(600px) rotateZ("+i*60+"deg) translateY("+ 49*(1/Math.sqrt(3))+"px)  " });
+                            }
+                        }else{
+                            if(i%2){
+                                $(this).css({transform: " perspective(600px) rotateZ("+i*60+"deg) translateY("+ 49*(1/Math.sqrt(3))+"px)  " });
+                            }else{
+                                $(this).css({transform: " perspective(600px) rotateZ("+i*60+"deg) translateY("+ -49*(1/Math.sqrt(3))+"px)  " });
+                            }
+                        }
+                    });
+                })();
+            });
+        })()
+    });
+
+    var cont =0,showID;
+   function beginShow(){
+       showID = setInterval(function(){
+           cont++;
+           $(".trBox").css({transform: " perspective(600px) rotateX("+cont*10+"deg)  rotateY("+cont*10+"deg)  rotateZ("+cont*10+"deg) " });
+       },500);
+   }
+    $(".begin").on("click",function(){
+        if(!showID) beginShow();
+    });
+    $(".stop").on("click",function(){
+        if(showID) clearInterval(showID);
+    });
+//    beginShow();
+</script>
+</body>
+</html>
