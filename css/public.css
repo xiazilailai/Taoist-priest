@@ -1,5 +1,5 @@
 body{
-    background: #FFFFFF url("../img/bg.png") repeat ;
+    background: #FFFFFF url("../img/bg12.png") repeat ;
 }
 @font-face {
     font-family: fontZh;
@@ -70,6 +70,12 @@ a{
 .contBox{
     padding: 2px;
 }
+.outContent{
+    top: 70px;
+    bottom: auto;
+    left: 2px;
+    right: auto;
+}
 .headIcon{
     width: 100px;
     height: 100px;
@@ -135,7 +141,7 @@ a{
     height: 18px;
     float: left;
     margin: 1px;
-    background-color: #f1fbfe;
+    background-color: transparent;
 }
 .light{
     background-color: #178bf0;
@@ -156,3 +162,5 @@ a{
 .appBox{
     width: 310px;
 }
+
+

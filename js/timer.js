@@ -60,7 +60,7 @@ var node0 = $(".numBox:eq(0)"),node1 = $(".numBox:eq(1)"),node2 = $(".numBox:eq(
 function runTime(){
     drawTimer();
     if(timerID) clearInterval(timerID);
-    timerID = setInterval(drawTimer,900);
+    timerID = setInterval(drawTimer,999);
 }
 function drawTimer(){
     var date = new Date();
