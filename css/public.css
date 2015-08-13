@@ -162,5 +162,13 @@ a{
 .appBox{
     width: 310px;
 }
-
+.littleTitle{
+    font-weight: bold;
+    font-family:fontZh , "楷体" ;
+    font-size: 14px;
+    color: #35b291;
+    padding: 2px;
+    text-shadow: 0 1px 1px #257259;
+    position: absolute;
+}
 
