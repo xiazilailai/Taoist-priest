@@ -20,5 +20,5 @@
 简单的发布-订阅模式实现的主页与iframe，iframe与iframe之间的通信功能
 ### 8、[ - APPCan_canvas-upload](https://github.com/xiazilailai/Taoist-priest/tree/master/APPCan_canvas_upload)
 基于APPCan的一个头像截图上传插件，支持手势放大缩小，移动位置。用例： img.src = "your IMG URL";
-### 9、[ - 自写的jq插件]()
+### 9、[ - 自写的jq插件](https://github.com/xiazilailai/Taoist-priest/tree/master/%E8%87%AA%E5%86%99%E7%9A%84jq%E6%8F%92%E4%BB%B6)
 自己写的一些插件
